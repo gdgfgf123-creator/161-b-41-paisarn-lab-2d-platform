@@ -9,17 +9,23 @@ public class Ant : Enemy
     void Start()
     {
         base.Intialize(20);
+        DamgeHit = 20;
+
+        velocity = new Vector2(-1.0f, 0.0f);
     }
 
     public override void Behavior()
     {
-        throw new System.NotImplementedException();
+        rd.MovePosition(rd.position + velocity * Time.fixedDeltaTime);
+
     }
-
-
+    private void FixedUpdate()
+    {
+        Behavior();
+    }
     // Update is called once per frame
     void Update()
     {
-        
+           
     }
 }
