@@ -18,10 +18,11 @@ public class Croccodile : Enemy, IShootable
         //set atk range and target
         atkRange = 6.0f;
         player = GameObject.FindFirstObjectByType<player>();
+        ReloadTime = 1f;
     }
     private void FixedUpdate()
     {
-        WaitTime = Time.fixedDeltaTime;
+        WaitTime += Time.fixedDeltaTime;
         Behavior();
     }
     public override void Behavior()

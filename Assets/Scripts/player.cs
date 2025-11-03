@@ -28,12 +28,13 @@ public class player : Character, IShootable
     }
     private void FixedUpdate()
     {
-        WaitTime = Time.fixedDeltaTime;
+        
     }
     // Update is called once per frame
     void Update()
     {
         Shoot();
+        WaitTime += Time.deltaTime;
     }
 
     public void Shoot()
@@ -45,6 +46,7 @@ public class player : Character, IShootable
             if (banana != null)
                 banana.InitWeapon(20,this);
             WaitTime = 0.0f;
+            Debug.Log("000");
         }
     }
 
