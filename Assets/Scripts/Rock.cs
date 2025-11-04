@@ -13,7 +13,7 @@ public class Rock : Weapon
     {
         if (obj is player)
             obj.TakeDamage(this.damge);
-           
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
