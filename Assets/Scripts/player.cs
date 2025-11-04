@@ -1,15 +1,18 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class player : Character, IShootable
 {
     [field : SerializeField]public GameObject Bullet { get; set; }
     [field : SerializeField]public Transform ShootPoint { get; set ; }
     public float ReloadTime { get ; set ; }
     public float WaitTime { get ; set; }
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+        HP.maxValue = 100;
         base.Intialize(100);
         ReloadTime = 1.0f;
         WaitTime = 1.0f;
@@ -35,6 +38,7 @@ public class player : Character, IShootable
     {
         Shoot();
         WaitTime += Time.deltaTime;
+        HP.value = Health;
     }
 
     public void Shoot()

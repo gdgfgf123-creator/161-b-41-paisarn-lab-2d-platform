@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Croccodile : Enemy, IShootable
 {
@@ -9,10 +10,12 @@ public class Croccodile : Enemy, IShootable
     [field: SerializeField] public Transform ShootPoint { get; set; }
     public float ReloadTime { get; set; }
     public float WaitTime { get; set; }
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        HP.maxValue = 50;
         base.Intialize(50);
         DamgeHit = 30;
         //set atk range and target
@@ -24,6 +27,7 @@ public class Croccodile : Enemy, IShootable
     {
         WaitTime += Time.fixedDeltaTime;
         Behavior();
+        HP.value = Health;
     }
     public override void Behavior()
     {

@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour
 {
+    [SerializeField] public Slider HP;
     private int health;
     public int Health
     {
@@ -35,6 +37,7 @@ public abstract class Character : MonoBehaviour
         if (Health <= 0)
         {
             Destroy(this.gameObject);
+            Destroy(HP.gameObject);
             return true;
         }
         else { return false; }

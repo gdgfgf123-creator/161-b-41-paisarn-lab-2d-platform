@@ -28,8 +28,9 @@ public abstract class Weapon : MonoBehaviour
         if (character != null)
         {
             OnHItWith(other.GetComponent<Character>());
-            Destroy(this.gameObject, 5f);
+            Destroy(this.gameObject , 2f);
         }
+        
     }
 
 
@@ -37,8 +38,8 @@ public abstract class Weapon : MonoBehaviour
 
 
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+   // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
         
     }

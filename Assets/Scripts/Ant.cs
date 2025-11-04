@@ -10,7 +10,7 @@ public class Ant : Enemy
     {
         base.Intialize(20);
         DamgeHit = 20;
-
+        HP.maxValue = 20;
         velocity = new Vector2(-1.0f, 0.0f);
     }
 
@@ -39,7 +39,8 @@ public class Ant : Enemy
     private void FixedUpdate()
     {
         Behavior();
-        
+        HP.value = Health;
+
     }
     // Update is called once per frame
     void Update()
